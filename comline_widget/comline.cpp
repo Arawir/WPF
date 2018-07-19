@@ -4,16 +4,27 @@
 //FUNCTIONS
 Comline::Comline(QWidget *parent){
   main_layout = new QVBoxLayout(this);
+  scroll_widget = new QWidget();
   scroll_area = new QScrollArea();
   scroll_layout = new QVBoxLayout();
   new_letter_edit = new QTextEdit();
   debug_button = new QPushButton("DEBUG");
-  
-  scroll_area->setLayout(scroll_layout);
+
+
   main_layout->addWidget(scroll_area);
   main_layout->addWidget(new_letter_edit);
   main_layout->addWidget(debug_button);
+  
+  scroll_widget->setLayout(scroll_layout);
+  // scroll_widget->setSizePolicy(QSizePolicy::Expanding);
 
+  
+  scroll_area->setWidget(scroll_widget);
+  scroll_area->setWidgetResizable(true);
+  scroll_area->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+  
+  //
+ 
   connect(debug_button, SIGNAL(clicked()), this, SLOT(Debug_slot()));
   
   setLayout(main_layout);

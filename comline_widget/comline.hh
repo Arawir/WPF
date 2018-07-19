@@ -2,6 +2,7 @@
 #define COMLINE_HH
 
 #include <QScrollArea>
+#include <QSizePolicy>
 
 #include "letter.hh"
 ////////////////////////////////////////////////////////////////////////////////
@@ -32,6 +33,7 @@ private:
   QString round;
   
   QVBoxLayout *main_layout;
+  QWidget *scroll_widget;
   QVBoxLayout *scroll_layout;
   QScrollArea *scroll_area;
   QTextEdit *new_letter_edit;
