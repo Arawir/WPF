@@ -22,6 +22,7 @@ public:
   void Set_to_name(QString n);
   void Set_round(QString r);
 
+  void Debug();
 private:
   QString text="";
   QString from_id="";

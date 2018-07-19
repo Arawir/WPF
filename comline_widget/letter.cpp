@@ -61,7 +61,15 @@ void Letter::Set_round(QString r){
   label->setText(tmp);
 }
 
-
+void Letter::Debug(){
+  QString tmp = "FROM: " + from_name + " (" + from_id + ")  "
+    + "TO: " + to_name + " (" + to_id + ")  "
+    + "ROUND: " + round + "\r\n\r\n" + text;
+  qDebug() << "////////////////////////////////";
+  qDebug() << "Next letter debug: ";
+  qDebug() << tmp;
+  qDebug() << "////////////////////////////////";
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 //SLOTS

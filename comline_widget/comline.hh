@@ -18,6 +18,10 @@ public:
   void Set_round(QString r){ round = r; }
   Letter* To_send();
 
+  void Debug();
+	      
+public slots:
+  void Debug_slot();
 
 private:
   QList<Letter*> letters;
@@ -31,6 +35,7 @@ private:
   QVBoxLayout *scroll_layout;
   QScrollArea *scroll_area;
   QTextEdit *new_letter_edit;
+  QPushButton *debug_button;
 };
 ////////////////////////////////////////////////////////////////////////////////
 #endif
