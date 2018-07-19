@@ -1,1 +1,1 @@
-WPF
+Simple elements of GUI.
