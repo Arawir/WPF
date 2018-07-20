@@ -1,0 +1,18 @@
+#ifndef CARDLINE_HH
+#define CARDLINE_HH
+
+#include "card.hh"
+
+///////////////////////////////////////////////////////////////////////////////
+class Cardline : public QWidget{
+Q_OBJECT
+private:
+  QList<Card_type> cards;
+
+  QVBoxLayout *main_layout;
+  QLabel *label;
+  
+};
+
+///////////////////////////////////////////////////////////////////////////////
+#endif
