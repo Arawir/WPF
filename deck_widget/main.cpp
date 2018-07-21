@@ -1,30 +1,30 @@
 #include <QApplication>
 #include <QCoreApplication>
-#include "card.hh"
-#include "panel.hh"
-#include "preview.hh"
-#include "cardline.hh"
-
+//#include "card.hh"
+//#include "panel.hh"
+//#include "preview.hh"
+//#include "cardline.hh"
+#include "deck.hh"
 
 int main(int argc, char *argv[]){
   QApplication app(argc, argv);
 
- 
-  Card_type_panel C1;
-  Card_type_panel C2;
-  Card_type Ctype;
-  Card_type_preview Pview;
-  Cardline Cline;
-  
-  C1.Set_card_type(&Ctype);
-  C2.Set_card_type(&Ctype);
+  Deck *D = new Deck();
 
-  Cline.Add_panel(&C1);
-  Cline.Add_panel(&C2);
+  D->Add_card_line("a","1","ja","0");
+  D->Add_card_line("b","2","ja","0");
 
-  Pview.Set_card_type(&Ctype);
+  D->Add_card_type("1","aaa","des1");
+  D->Add_card_type("2","bbb","des2");
+
+  D->Add_card_line("c","3","ja","0");
+  D->Add_card_line("d","4","ja","0");
+
+  D->Add_card_type("5","ggg","des5");
+  D->Add_card_type("6","fff","des6");
+
+  D->Set_card_number("5", 10);
   
-  Cline.show();
-  Pview.show();
+  D->show();
   return app.exec();
 }
