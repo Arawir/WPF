@@ -1,1 +1,1 @@
-Simple elements of GUI.
+Deck is ready to use.

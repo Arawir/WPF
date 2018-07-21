@@ -1,8 +1,8 @@
-#include "preview.hh"
+#include "Inc/preview.hh"
 
 ////////////////////////////////////////////////////////////////////////////////
 //FUNCTIONS
-Card_type_preview::Card_type_preview(QObject *parent){
+Card_type_preview::Card_type_preview(QWidget *parent) : QWidget(parent){
   main_layout = new QVBoxLayout();
   label = new QLabel("empty");
   main_layout->addWidget(label);

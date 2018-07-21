@@ -1,8 +1,8 @@
-#include "panel.hh"
+#include "Inc/panel.hh"
 
 ////////////////////////////////////////////////////////////////////////////////
 //FUNCTIONS
-Card_type_panel::Card_type_panel(QObject *parent){
+Card_type_panel::Card_type_panel(QWidget *parent) : QWidget(parent){
   main_layout = new QHBoxLayout();
 
   desc_label = new QLabel("Card name");

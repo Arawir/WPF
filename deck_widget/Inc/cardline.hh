@@ -16,7 +16,7 @@ private:
 
   QVBoxLayout *main_layout;
 public:
-  Cardline(QObject *parent = nullptr);
+  Cardline(QWidget *parent = nullptr);
 
   void Set_player_name(QString n){ player_name = n; }
   void Set_my_name(QString n){ my_name = n; }

@@ -1,8 +1,8 @@
-#include "cardline.hh"
+#include "Inc/cardline.hh"
 
 ///////////////////////////////////////////////////////////////////////////////
 //FUNCTIONS
-Cardline::Cardline(QObject *parent){
+Cardline::Cardline(QWidget *parent) : QWidget(parent){
   main_layout = new QVBoxLayout();
   setLayout(main_layout);
 }

@@ -19,12 +19,14 @@ private:
   QPushButton *debug_button;
 
 public:
-  Card_type_panel(QObject *parent = nullptr);
+  Card_type_panel(QWidget *parent = nullptr);
 
-  void Set_card_type(Card_type *c){ C = c; }
+  void Set_card_type(Card_type *c);
   void Add(qint32 a);
   qint32 Subtract(qint32 s);
 
+  void Zeroes();
+  
   void Debug();
 signals:
   // void Number_changed_sig();
@@ -33,6 +35,7 @@ private slots:
   void Debug_slot();
   void Add_slot();
   void Sub_slot();
+  void Zeroes_slot();
 };
 
 ///////////////////////////////////////////////////////////////////////////////

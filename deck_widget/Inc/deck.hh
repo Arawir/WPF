@@ -17,7 +17,7 @@ private:
   QPushButton *debug_button;
   
 public:
-  Deck(QObject *parent = nullptr);
+  Deck(QWidget *parent = nullptr);
 
   void Add_card_type(QString id, QString name, QString desc);
   void Add_card_line(QString pn, QString pi, QString mn, QString mi);

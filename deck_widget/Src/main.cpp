@@ -4,7 +4,7 @@
 //#include "panel.hh"
 //#include "preview.hh"
 //#include "cardline.hh"
-#include "deck.hh"
+#include "Inc/deck.hh"
 
 int main(int argc, char *argv[]){
   QApplication app(argc, argv);

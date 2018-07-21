@@ -13,7 +13,7 @@ private:
   QLabel *label;
 
 public:
-  Card_type_preview(QObject *parent = nullptr);
+  Card_type_preview(QWidget *parent = nullptr);
 
   void Set_card_type(Card_type *c);
   void Refresh();

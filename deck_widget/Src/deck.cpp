@@ -1,8 +1,8 @@
-#include "deck.hh"
+#include "Inc/deck.hh"
 
 ////////////////////////////////////////////////////////////////////////////////
 //FUNCTIONS
-Deck::Deck(QObject *parent){
+Deck::Deck(QWidget *parent) : QWidget(parent){
   main_layout = new QVBoxLayout();
   label = new QLabel("YOUR CARD'S DECK");
   cards_layout = new QVBoxLayout();
