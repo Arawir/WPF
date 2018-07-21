@@ -66,9 +66,25 @@ void Deck::Set_card_number(QString card_id, qint32 n){
   }
 }
 
+QStringList Deck::To_send(){
+  QStringList out;
+  
+  foreach(Cardline *L, lines){
+    out += L->To_send();
+  }
+
+  return out;
+}
+
 void Deck::Debug(){
+  QStringList tmp = To_send();
+  
   qDebug() << "DEBUG DECK: ";
-  qDebug() << "   TODO ";
+  qDebug() << "   TO SEND: ";
+  
+  foreach(QString S, tmp){
+    qDebug() << "   " << S;
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////

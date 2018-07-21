@@ -19,12 +19,11 @@ private:
 
   QPushButton *debug_button;
 public:
-  Mailbox(QObject *parent = nullptr);
+  Mailbox(QWidget *parent = nullptr);
   void Add_comline(Comline *C);
   void Add_letter(Letter *L);
   void Collect_letters();
-  Letter* To_send();
-  bool No_letter();
+  QStringList To_send();
 
   void Debug();
 

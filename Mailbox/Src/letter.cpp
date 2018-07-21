@@ -1,8 +1,8 @@
-#include "letter.hh"
+#include "Inc/letter.hh"
 
 ////////////////////////////////////////////////////////////////////////////////
 //FUNCTIONS
-Letter::Letter(QWidget *parent){
+Letter::Letter(QWidget *parent) : QWidget(parent){
   main_layout = new QVBoxLayout(this);
   label = new QLabel("nothing to show");
   main_layout->addWidget(label);

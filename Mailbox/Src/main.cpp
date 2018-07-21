@@ -1,8 +1,8 @@
 #include <QApplication>
 #include <QCoreApplication>
-#include "letter.hh"
-#include "comline.hh"
-#include "mailbox.hh"
+#include "Inc/letter.hh"
+#include "Inc/comline.hh"
+#include "Inc/mailbox.hh"
 
 int main(int argc, char *argv[]){
   QApplication app(argc, argv);

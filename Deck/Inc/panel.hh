@@ -21,6 +21,9 @@ private:
 public:
   Card_type_panel(QWidget *parent = nullptr);
 
+  qint32 Number(){ return number; }
+  QString Card_id(){ return C->Id(); }
+  
   void Set_card_type(Card_type *c);
   void Add(qint32 a);
   qint32 Subtract(qint32 s);

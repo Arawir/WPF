@@ -1,8 +1,8 @@
-#include "mailbox.hh"
+#include "Inc/mailbox.hh"
 
 ////////////////////////////////////////////////////////////////////////////////
 //FUNCTIONS
-Mailbox::Mailbox(QObject *parent){
+Mailbox::Mailbox(QWidget *parent) : QWidget(parent){
   main_layout = new QVBoxLayout();
   tab_widget = new QTabWidget();
   label = new QLabel("MESSENGER");

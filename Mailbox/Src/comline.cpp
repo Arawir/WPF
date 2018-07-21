@@ -1,8 +1,8 @@
-#include "comline.hh"
+#include "Inc/comline.hh"
 
 ////////////////////////////////////////////////////////////////////////////////
 //FUNCTIONS
-Comline::Comline(QWidget *parent){
+Comline::Comline(QWidget *parent) : QWidget(parent){
   main_layout = new QVBoxLayout(this);
   scroll_widget = new QWidget();
   scroll_area = new QScrollArea();

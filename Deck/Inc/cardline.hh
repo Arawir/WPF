@@ -27,8 +27,10 @@ public:
   QString My_name(){ return my_name; }
   QString Player_id(){ return player_id; }
   QString My_id(){ return my_id; }
-
+  
   void Add_panel(Card_type_panel *P);
+
+  QStringList To_send();
 };
 ////////////////////////////////////////////////////////////////////////////////
 #endif
