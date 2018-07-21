@@ -6,49 +6,67 @@ Mailbox::Mailbox(QWidget *parent) : QWidget(parent){
   main_layout = new QVBoxLayout();
   tab_widget = new QTabWidget();
   label = new QLabel("MESSENGER");
-  debug_button = new QPushButton("Debug");
+  debug_button = new QPushButton("Debug mailbox");
   
   main_layout->addWidget(label);
   main_layout->addWidget(tab_widget);
-
+  main_layout->addWidget(debug_button);
+  
   connect(debug_button, SIGNAL(clicked()), this, SLOT(Debug_slot()));
   
   setLayout(main_layout);
 }
 
-void Mailbox::Add_comline(Comline *C){
+void Mailbox::Add_comline(QString fi, QString fn, QString mi, QString mn){
+  Comline *C = new Comline();
+  C->Set_from_id(fi);
+  C->Set_from_name(fn);
+  C->Set_to_id(mi);
+  C->Set_to_name(mn);
+  C->Set_round(0);
   comlines.append(C);
   tab_widget->addTab(C, C->From_name() );
 }
 
-void Mailbox::Add_letter(Letter *L){
+void Mailbox::Add_letter(QString fi, QString fn, QString ti, QString tn, QString text, QString round){
+  Letter *L = new Letter();
+  L->Set_text(text);
+  L->Set_from_id(fi);
+  L->Set_from_name(fn);
+  L->Set_to_id(ti);
+  L->Set_to_name(tn);
+  L->Set_round(round);
+  
   foreach(Comline *C, comlines){
-    if( C->From_id() == L->To_id() ){
+    qDebug() << C->To_id() << "   " << fi;
+    if( C->From_id() == fi ){
       C->Add_letter(L);
       break;
     }
   }
 }
 
-void Mailbox::Collect_letters(){
-  Letter* tmp;
+QStringList Mailbox::To_send(){
+  QString tmp="";
+  QStringList out;
+
   foreach(Comline *C, comlines){
     tmp = C->To_send();
-    if(tmp!=NULL) to_send.append(tmp); 
+    if(tmp!="") out.append(tmp);
   }
+
+  return out;
 }
-
-Letter* Mailbox::To_send(){
-  Letter *L = to_send.first();
-  to_send.removeFirst();
-  return L;
-}
-
-bool Mailbox::No_letter(){ return to_send.isEmpty(); }
-
 
 void Mailbox::Debug(){
+  QStringList tmp = To_send();
+  
   qDebug() << "Debug mailbox";
+  qDebug() << "   To send list:";
+
+  foreach(QString S, tmp){
+    qDebug() << "   " << S;
+  }
 }
 ////////////////////////////////////////////////////////////////////////////////
 //SLOTS

@@ -22,7 +22,7 @@ public:
   QString To_id(){ return my_id; }
   QString To_name(){ return my_name; }
   
-  Letter* To_send();
+  QString To_send();
 
   void Debug();
 	      

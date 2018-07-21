@@ -35,18 +35,13 @@ void Comline::Add_letter( Letter *L){
   scroll_layout->addWidget(L);
 }
 
-Letter* Comline::To_send(){
-  Letter *to_send = new Letter();
-  QString tmp = new_letter_edit->toPlainText();
-  if(tmp=="") return NULL;
-  to_send->Set_text( tmp );
-  to_send->Set_from_id(my_id);
-  to_send->Set_from_name(my_name);
-  to_send->Set_to_id(from_id);
-  to_send->Set_from_id(my_id);
-  to_send->Set_round(round);
+QString Comline::To_send(){
+  if( new_letter_edit->toPlainText()=="" ) return "";
 
-  return to_send;
+  QString out = "SEND_LETTER_|_" + my_id + "_|_" + from_id + "_|_"
+    + round + "_|_" + new_letter_edit->toPlainText();
+  
+  return out;
 }
 
 void Comline::Debug(){

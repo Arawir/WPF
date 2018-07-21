@@ -1,0 +1,16 @@
+After creation deck_widget you shoud use commands
+
+      void Add_card_type(QString id, QString name, QString desc);
+      void Add_card_line(QString pn, QString pi, QString mn, QString mi);
+
+Server can set number of cards by using function
+
+       void Set_card_number(QString card_id, qint32 n);
+
+To take information about used cards you can use function
+
+     QStringList To_send();
+
+Output data looks like
+
+"USE_CARD_|_" card_id "_|_" number of used cards "_|_" player id "_|_" target id

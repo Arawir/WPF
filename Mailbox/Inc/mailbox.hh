@@ -10,7 +10,6 @@ class Mailbox : public QWidget{
   Q_OBJECT
 private:
   QList<Comline*> comlines;
-  QList<Letter*> to_send;
   QString round;
   
   QVBoxLayout *main_layout;
@@ -20,9 +19,8 @@ private:
   QPushButton *debug_button;
 public:
   Mailbox(QWidget *parent = nullptr);
-  void Add_comline(Comline *C);
-  void Add_letter(Letter *L);
-  void Collect_letters();
+  void Add_comline(QString fi, QString fn, QString mi, QString mn);
+  void Add_letter(QString fi, QString fn, QString ti, QString tn, QString text, QString round);
   QStringList To_send();
 
   void Debug();

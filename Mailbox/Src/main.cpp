@@ -6,31 +6,16 @@
 
 int main(int argc, char *argv[]){
   QApplication app(argc, argv);
-  Letter *L1 = new Letter();
-  Letter *L2 = new Letter();
-  Letter *L3 = new Letter();
-  Letter *L4 = new Letter();
-  Letter *L5 = new Letter();
-  Letter *L6 = new Letter();
-  
-  Comline *C1 = new Comline();
-  Comline *C2 = new Comline();
+  Mailbox *M = new Mailbox();
 
-  C1->Set_from_name("aaa");
-  C2->Set_from_name("bbb");
-  
-  C1->Add_letter(L1);
-  C1->Add_letter(L2);
-  C2->Add_letter(L3);
-  C2->Add_letter(L4);
-  C1->Add_letter(L5);
-  C1->Add_letter(L6);
+  M->Add_comline("1", "aaa", "0", "ja");
+  M->Add_comline("2", "bbb", "0", "ja");
+  M->Add_comline("3", "ccc", "0", "ja");
 
-  Mailbox M;
-
-  M.Add_comline(C1);
-  M.Add_comline(C2);
+  M->Add_letter("2","bbb","0","ja","test text","11");
+  M->Add_letter("1","bbb","0","ja","test text aa","11");
+  M->Add_letter("2","bbb","0","ja","test text bbb","11");
   
-  M.show();
+  M->show();
   return app.exec();
 }
