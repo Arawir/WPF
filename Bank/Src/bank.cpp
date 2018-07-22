@@ -4,16 +4,19 @@
 //FUNCTIONS
 Bank::Bank(QWidget *parent) : QWidget(parent){
   gold = new Gold();
-  view = new Goldview();
-  view->Set_gold(gold);
-  
   main_layout = new QVBoxLayout();
-  main_layout->addWidget(view);
+  
+  main_layout->addWidget(gold);
+
+  Secret_acc *S = new Secret_acc();
+  S->Set_gold(gold);
+  lines.append(S);
+  main_layout->addWidget(S);
   
   setLayout(main_layout);
 }
 
-void Bank::Set_free_gold(QString g){  // ad Zeroes signal!!!!!!!!!!!!!!!!!
+void Bank::Set_free_gold(QString g){ 
   gold->Set_gold( g.toInt() );
 }
 

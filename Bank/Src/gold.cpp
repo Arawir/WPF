@@ -14,3 +14,8 @@ void Gold::Set_gold(qint32 g){
   label->setText("Your gold: " + QString::number(gold) );
   emit Gold_changed_sig();
 }
+
+void Gold::Add_gold(qint32 g){
+  gold += g;
+  label->setText("Your gold: " + QString::number(gold) );
+}

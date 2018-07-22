@@ -47,7 +47,7 @@ protected:
   virtual void Refresh();
 private slots:
   void Set_gold_slot(qint32 g);
-   
+  void Free_gold_changed_slot();
 };
 
 

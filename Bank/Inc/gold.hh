@@ -21,7 +21,8 @@ private:
 
 public:
   Gold(QWidget *parent = nullptr);
-  void Set_gold(qint32 g);
+  void Set_gold(qint32 g); // use by mainapp
+  void Add_gold(qint32 g); // use by gui
   qint32 Free_gold(){ return gold; }
 
 signals:

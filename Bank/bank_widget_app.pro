@@ -4,14 +4,12 @@ requires(qtConfig(combobox))
 HEADERS       = Inc/gold.hh \
                 Inc/goldline.hh \
                 Inc/secret_acc.hh \
-                Inc/goldview.hh \
                 Inc/bank.hh
                 
                 
 SOURCES       = Src/gold.cpp \
                 Src/goldline.cpp \
                 Src/secret_acc.cpp \
-                Src/goldview.cpp \
                 Src/bank.cpp \
                 Src/main.cpp
 

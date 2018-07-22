@@ -65,7 +65,7 @@ Goldline::Goldline(QWidget *parent) : QWidget(parent){
 
 void Goldline::Set_gold(Gold *g){
   G=g;
-  //  connect(G, SIGNAL(Gold_changed_sig()), this, SLOT(Set_gold_slot()));
+  connect(G, SIGNAL(Gold_changed_sig()), this, SLOT(Free_gold_changed_slot()));
 }
 
 void Goldline::Set_to_id(QString i){
@@ -90,18 +90,16 @@ void Goldline::Add_gold(qint32 g){
   qint32 free_gold = G->Free_gold();
   
   if(g<=free_gold){
-    G->Set_gold(free_gold-g);
+    G->Add_gold(-g);
     to_send += g;
   }
 
   Refresh(); 
 }
 
-void Goldline::Sub_gold(qint32 g){
-  qint32 free_gold = G->Free_gold();
-    
-  if(g<=to_send){
-    G->Set_gold(free_gold-g);
+void Goldline::Sub_gold(qint32 g){    
+  if((to_send+g)>=0){
+    G->Add_gold(-g);
     to_send += g;
   }
 
@@ -117,4 +115,9 @@ void Goldline::Refresh(){
 void Goldline::Set_gold_slot(qint32 g){
   if(g>=0) Add_gold(g);
   else Sub_gold(g);
+}
+
+void Goldline::Free_gold_changed_slot(){
+  to_send=0;
+  Refresh();
 }
