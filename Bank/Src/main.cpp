@@ -2,6 +2,7 @@
 #include <QCoreApplication>
 
 #include "Inc/goldline.hh"
+#include "Inc/secret_acc.hh"
 
 int main(int argc, char *argv[]){
   QApplication app(argc, argv);
@@ -11,11 +12,13 @@ int main(int argc, char *argv[]){
 
   Goldline *L1 = new Goldline();
   Goldline *L2 = new Goldline();
+  Secret_acc *S = new Secret_acc();
   L1->Set_gold(G);
   L2->Set_gold(G);
-
-  L1->show();
-  L2->show();
+  S->Set_gold(G);
   
+  //L1->show();
+  // L2->show();
+  S->show();
   return app.exec();
 }

@@ -8,7 +8,7 @@
 
 class Goldline : public QWidget{
 Q_OBJECT
-private:
+protected:
   qint32 to_send=0;
   Gold *G=nullptr;
   QString to_id;
@@ -41,10 +41,10 @@ public:
   void Set_to_name(QString n);
   void Set_my_id(QString i);
   void Set_my_name(QString n);
-private:
+protected:
   void Add_gold(qint32 g);
   void Sub_gold(qint32 g);
-  void Refresh();
+  virtual void Refresh();
 private slots:
   void Set_gold_slot(qint32 g);
    
